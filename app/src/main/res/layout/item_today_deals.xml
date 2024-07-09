@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/_165sdp"
+    android:layout_height="@dimen/_100sdp"
+    android:layout_margin="5dp"
+    android:background="@drawable/item_dashboard_background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="1dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_99sdp"
+        android:layout_height="@dimen/_99sdp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="12dp"
+        android:backgroundTint="@color/white"
+        app:cardElevation="0dp">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_80sdp"
+            android:layout_marginTop="8dp"
+            app:srcCompat="@drawable/like_img" />
+
+        <ImageView
+            android:id="@+id/iv_item_todayDeals_image"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="image"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_cp1" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:srcCompat="@drawable/share_img" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:text="UP TO 50% OFF + 10%" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_23sdp"
+            android:background="@drawable/button_background"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_9sdp"
+            android:layout_marginTop="@dimen/_27sdp"
+            android:text="Get Deal" />
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

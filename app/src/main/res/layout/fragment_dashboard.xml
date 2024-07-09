@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_200"
+    android:fillViewport="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/home_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:nestedScrollingEnabled="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:context=".presentation.home.HomeFragment"
+        tools:layout_editor_absoluteX="-44dp">
+
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/ed_home_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_42sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginRight="@dimen/_45sdp"
+            android:background="@drawable/home_search_shape"
+            android:drawableStart="@drawable/ic_search"
+            android:drawableEnd="@drawable/offers_icon1"
+            android:drawablePadding="@dimen/_18sdp"
+            android:elevation="1dp"
+            android:fontFamily="@font/roboto"
+            android:hint="@string/home_search"
+            android:maxLines="1"
+            android:textSize="@dimen/font_md"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Top Stores in Egypt"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/font_md"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/carousel_recycler_view"
+            app:layout_constraintStart_toStartOf="@+id/carousel_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_category_viewAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/view_all_label"
+            android:textColor="@color/grey_dark"
+            android:textSize="@dimen/font_md"
+            app:layout_constraintBottom_toTopOf="@+id/carousel_recycler_view"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/carousel_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/ed_home_search"
+            app:layout_constraintTop_toBottomOf="@id/ed_home_search"
+            tools:listitem="@layout/item_category" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/carousel_recycler_view">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_autoscroll"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="160dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_10sdp" />
+
+            <LinearLayout
+                android:id="@+id/SliderDots"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:id="@+id/Slidertext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_slider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="90% OFF"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_25sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/carousel_recycler_view"
+                    app:layout_constraintStart_toStartOf="@+id/carousel_recycler_view" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Sliderimageicon"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignStart="@+id/vp_autoscroll"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageslider"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:src="@drawable/carrefour_image"
+                    app:layout_constraintBottom_toBottomOf="@+id/ed_home_search"
+                    app:layout_constraintStart_toEndOf="@+id/ed_home_search"
+                    app:layout_constraintTop_toTopOf="@+id/ed_home_search" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/SliderButtom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/_55sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/Buttomlider"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:background="@drawable/button_background"
+                    android:text="GET DEAL NOW"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ed_home_search"
+                    app:layout_constraintStart_toEndOf="@+id/ed_home_search"
+                    app:layout_constraintTop_toTopOf="@+id/ed_home_search" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/Coupons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Best Coupons in Egypt"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/font_md"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/coupons_recycler_view"
+            app:layout_constraintStart_toStartOf="@+id/coupons_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_Coupons_viewAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/view_all_label"
+            android:textColor="@color/grey_dark"
+            android:textSize="@dimen/font_md"
+            app:layout_constraintBottom_toTopOf="@+id/coupons_recycler_view"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/coupons_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_13sdp"
+            android:layout_marginTop="@dimen/_60sdp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/relativeLayout"
+            app:layout_constraintTop_toBottomOf="@id/relativeLayout"
+            tools:listitem="@layout/item_coupons_in_egypt" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="Log in"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="OR"
+            android:textColor="@color/grey_dark"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/textView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="Register"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView2"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:src="@drawable/img_profile"
+            app:layout_constraintBottom_toTopOf="@+id/Coupons"
+            app:layout_constraintStart_toStartOf="@+id/carousel_recycler_view"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView9"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:src="@drawable/bell_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/ed_home_search"
+            app:layout_constraintStart_toEndOf="@+id/ed_home_search"
+            app:layout_constraintTop_toTopOf="@+id/ed_home_search" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/CouponsForYou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Best Coupons For You"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/font_md"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/couponsForYou_recycler_view"
+            app:layout_constraintStart_toStartOf="@+id/couponsForYou_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_CouponsForYou_viewAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/view_all_label"
+            android:textColor="@color/grey_dark"
+            android:textSize="@dimen/font_md"
+            app:layout_constraintBottom_toTopOf="@+id/couponsForYou_recycler_view"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/couponsForYou_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_13sdp"
+            android:layout_marginTop="@dimen/_60sdp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/relativeLayout"
+            app:layout_constraintTop_toBottomOf="@id/coupons_recycler_view"
+            tools:listitem="@layout/item_coupons_in_egypt" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutMoreOffers"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/couponsForYou_recycler_view">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_autoscrollMoreOffers"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="160dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+
+                >
+
+            </androidx.viewpager2.widget.ViewPager2>
+
+            <LinearLayout
+                android:id="@+id/SliderDotsMoreOffers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:id="@+id/Slidertext2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_slider2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="90% OFF"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_25sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/vp_autoscrollMoreOffers"
+                    app:layout_constraintStart_toStartOf="@+id/vp_autoscrollMoreOffers" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Sliderimageicon2"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignStart="@+id/vp_autoscrollMoreOffers"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageslider2"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:src="@drawable/carrefour_image"
+                    app:layout_constraintBottom_toBottomOf="@+id/vp_autoscrollMoreOffers"
+                    app:layout_constraintStart_toEndOf="@+id/vp_autoscrollMoreOffers"
+                    app:layout_constraintTop_toTopOf="@+id/vp_autoscrollMoreOffers" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/SliderButtom2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/_55sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/Buttomlider2"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:background="@drawable/button_background"
+                    android:text="GET DEAL NOW"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/vp_autoscrollMoreOffers"
+                    app:layout_constraintStart_toEndOf="@+id/vp_autoscrollMoreOffers"
+                    app:layout_constraintTop_toTopOf="@+id/vp_autoscrollMoreOffers" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/bestDeals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Best Deals"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/font_md"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/bestDeals_recycler_view"
+            app:layout_constraintStart_toStartOf="@+id/bestDeals_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_bestDeals_viewAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/view_all_label"
+            android:textColor="@color/grey_dark"
+            android:textSize="@dimen/font_md"
+            app:layout_constraintBottom_toTopOf="@+id/bestDeals_recycler_view"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bestDeals_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_13sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/relativeLayout"
+            app:layout_constraintTop_toBottomOf="@id/relativeLayoutMoreOffers"
+            tools:listitem="@layout/item_best_deals" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView13"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            android:src="@drawable/img_newyear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bestDeals_recycler_view" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_120sdp"
+            android:src="@drawable/newyear13"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/imageView13"
+            app:layout_constraintTop_toBottomOf="@+id/bestDeals_recycler_view" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/newYearOffer_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_13sdp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/imageView13"
+            app:layout_constraintTop_toBottomOf="@+id/bestDeals_recycler_view"
+            tools:listitem="@layout/item_coupons_in_egypt" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView15"
+            android:src="@drawable/newyear11"
+            android:layout_marginEnd="@dimen/_270sdp"
+            style="@style/CustomImageViewStyle"
+            app:layout_constraintBottom_toBottomOf="@id/imageView13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/imageView13"
+            app:layout_constraintTop_toBottomOf="@id/bestDeals_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView16"
+            android:src="@drawable/newyear12"
+            android:layout_marginEnd="@dimen/_200sdp"
+            style="@style/CustomImageViewStyle"
+            app:layout_constraintBottom_toBottomOf="@id/imageView13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/imageView13"
+            app:layout_constraintTop_toBottomOf="@id/bestDeals_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView17"
+            android:src="@drawable/newyear11"
+            android:layout_marginEnd="@dimen/_130sdp"
+            style="@style/CustomImageViewStyle"
+            app:layout_constraintBottom_toBottomOf="@id/imageView13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/imageView13"
+            app:layout_constraintTop_toBottomOf="@id/bestDeals_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView18"
+            android:src="@drawable/newyear12"
+            android:layout_marginEnd="@dimen/_60sdp"
+            style="@style/CustomImageViewStyle"
+            app:layout_constraintBottom_toBottomOf="@id/imageView13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/imageView13"
+            app:layout_constraintTop_toBottomOf="@id/bestDeals_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView19"
+            android:src="@drawable/newyear11"
+            style="@style/CustomImageViewStyle"
+            app:layout_constraintBottom_toBottomOf="@id/imageView13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/imageView13"
+            app:layout_constraintTop_toBottomOf="@id/bestDeals_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView20"
+            android:src="@drawable/newyear12"
+            android:layout_marginStart="@dimen/_70sdp"
+            style="@style/CustomImageViewStyle"
+            app:layout_constraintBottom_toBottomOf="@id/imageView13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/imageView13"
+            app:layout_constraintTop_toBottomOf="@id/bestDeals_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView21"
+            android:src="@drawable/newyear11"
+            android:layout_marginStart="@dimen/_140sdp"
+            style="@style/CustomImageViewStyle"
+            app:layout_constraintBottom_toBottomOf="@id/imageView13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/imageView13"
+            app:layout_constraintTop_toBottomOf="@id/bestDeals_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView22"
+            android:src="@drawable/newyear12"
+            android:layout_marginStart="@dimen/_210sdp"
+            style="@style/CustomImageViewStyle"
+            app:layout_constraintBottom_toBottomOf="@id/imageView13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/imageView13"
+            app:layout_constraintTop_toBottomOf="@id/bestDeals_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView23"
+            android:src="@drawable/newyear11"
+            android:layout_marginStart="@dimen/_280sdp"
+            style="@style/CustomImageViewStyle"
+            app:layout_constraintBottom_toBottomOf="@id/imageView13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/imageView13"
+            app:layout_constraintTop_toBottomOf="@id/bestDeals_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/featuredDeals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Featured Deals"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/font_md"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/featured_recycler_view"
+            app:layout_constraintStart_toStartOf="@+id/featured_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_featured_viewAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/view_all_label"
+            android:textColor="@color/grey_dark"
+            android:textSize="@dimen/font_md"
+            app:layout_constraintBottom_toTopOf="@+id/featured_recycler_view"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/featured_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_13sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/relativeLayout"
+            app:layout_constraintTop_toBottomOf="@id/imageView13"
+            tools:listitem="@layout/item_featured_deals" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/recent_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Recent Categories"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/font_md"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/recent_recycler_view"
+            app:layout_constraintStart_toStartOf="@+id/recent_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_recent_category_viewAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/view_all_label"
+            android:textColor="@color/grey_dark"
+            android:textSize="@dimen/font_md"
+            app:layout_constraintBottom_toTopOf="@+id/recent_recycler_view"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recent_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ed_home_search"
+            app:layout_constraintTop_toBottomOf="@id/featured_recycler_view"
+            tools:listitem="@layout/item_category" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutMoreOffers2"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recent_recycler_view">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_autoscrollMoreOffers2"
+                android:layout_width="@dimen/_290sdp"
+                android:layout_height="160dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+
+                >
+
+            </androidx.viewpager2.widget.ViewPager2>
+
+            <LinearLayout
+                android:id="@+id/SliderDotsMoreOffers3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:id="@+id/Slidertext3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_slider3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="90% OFF"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_25sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/vp_autoscrollMoreOffers2"
+                    app:layout_constraintStart_toStartOf="@+id/vp_autoscrollMoreOffers2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Sliderimageicon3"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignStart="@+id/vp_autoscrollMoreOffers2"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageslider3"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:src="@drawable/carrefour_image"
+                    app:layout_constraintBottom_toBottomOf="@+id/vp_autoscrollMoreOffers2"
+                    app:layout_constraintStart_toEndOf="@+id/vp_autoscrollMoreOffers2"
+                    app:layout_constraintTop_toTopOf="@+id/vp_autoscrollMoreOffers2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/SliderButtom3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/_55sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/Buttomlider3"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:background="@drawable/button_background"
+                    android:text="GET DEAL NOW"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/vp_autoscrollMoreOffers2"
+                    app:layout_constraintStart_toEndOf="@+id/vp_autoscrollMoreOffers2"
+                    app:layout_constraintTop_toTopOf="@+id/vp_autoscrollMoreOffers2" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/todaysDeals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Best Deals"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/font_md"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/todaysDeals_recycler_view"
+            app:layout_constraintStart_toStartOf="@+id/todaysDeals_recycler_view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_todaysDeals_viewAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/view_all_label"
+            android:textColor="@color/grey_dark"
+            android:textSize="@dimen/font_md"
+            app:layout_constraintBottom_toTopOf="@+id/todaysDeals_recycler_view"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/todaysDeals_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_13sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/relativeLayout"
+            app:layout_constraintTop_toBottomOf="@id/relativeLayoutMoreOffers2"
+            tools:listitem="@layout/item_today_deals" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
