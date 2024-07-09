@@ -60,5 +60,7 @@ dependencies {
     implementation ("com.google.android.material:material:1.3.0-alpha03")
     implementation ("com.github.bumptech.glide:glide:4.16.0")
 
+    //dots indicator
+    implementation("com.tbuonomo:dotsindicator:5.0")
 
 }

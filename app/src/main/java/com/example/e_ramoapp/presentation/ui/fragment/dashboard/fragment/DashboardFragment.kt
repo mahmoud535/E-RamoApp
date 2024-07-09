@@ -17,6 +17,7 @@ import com.example.e_ramoapp.databinding.FragmentDashboardBinding
 import com.example.e_ramoapp.presentation.ui.adapter.*
 import com.example.e_ramoapp.presentation.ui.fragment.dashboard.viewmodel.DashboardViewModel
 import com.example.e_ramoapp.presentation.ui.fragment.dashboard.viewmodel.DashboardViewModelFactory
+import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 import kotlin.math.abs
 
 class DashboardFragment : Fragment() {
@@ -34,6 +35,7 @@ class DashboardFragment : Fragment() {
     private val todayDealsAdapter: TodayDealsAdapter by lazy { TodayDealsAdapter(dashboardViewModel.getFakeTodayDealsData()) }
     private val featuredAdapter: FeaturedAdapter by lazy { FeaturedAdapter(dashboardViewModel.getFakeFeaturedData()) }
     private val newYearOfferAdapter: CouponsAdapter by lazy { CouponsAdapter(dashboardViewModel.getFakeBestDealsData()) }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -45,6 +47,7 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         dashboardViewModel = ViewModelProvider(this, dashboardViewModelFactory).get(DashboardViewModel::class.java)
         actions()
+        binding.SliderDots.attachTo(binding.vpAutoscroll)
     }
 
     private fun actions(){
@@ -124,7 +127,6 @@ class DashboardFragment : Fragment() {
             adapter = ImageAdapterAutoImageSlider(
                 dashboardViewModel.getImageList(),
                 this,
-                binding.SliderDots
             )
             offscreenPageLimit = 3
             clipToPadding = false
@@ -157,7 +159,6 @@ class DashboardFragment : Fragment() {
             adapter = ImageAdapterAutoImageSlider(
                 dashboardViewModel.getMoreOffersImageList(),
                 this,
-                binding.SliderDots
             )
             offscreenPageLimit = 3
         }
@@ -168,7 +169,6 @@ class DashboardFragment : Fragment() {
             adapter = ImageAdapterAutoImageSlider(
                 dashboardViewModel.getMoreOffers2ImageList(),
                 this,
-                binding.SliderDots
             )
             offscreenPageLimit = 3
             clipToPadding = false
@@ -176,6 +176,7 @@ class DashboardFragment : Fragment() {
             getChildAt(0).overScrollMode = View.OVER_SCROLL_NEVER
         }
     }
+
     override fun onResume() {
         super.onResume()
         handler.postDelayed(runnable, 3000)

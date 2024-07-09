@@ -53,3 +53,5 @@ l
 Papp/src/main/java/com/example/e_ramoapp/domain/repository/IFakeDataRepository.kt,d\1\d1fff90b019e75727a2dede3c61447761fe617a1
 o
 ?app/src/main/java/com/example/e_ramoapp/data/model/ImageItem.kt,a\2\a25bd808b43c0386c6e5337c953c869e8b0a1684
+I
+gradle/libs.versions.toml,d\7\d7595319a0658be6f1ed500ad590d42e4b28bc4f
