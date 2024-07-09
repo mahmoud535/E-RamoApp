@@ -19,19 +19,17 @@
         tools:context=".presentation.home.HomeFragment"
         tools:layout_editor_absoluteX="-44dp">
 
-
-
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/ed_home_search"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_42sdp"
-            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_12sdp"
-            android:layout_marginRight="@dimen/_45sdp"
+            android:layout_marginEnd="@dimen/_45sdp"
             android:background="@drawable/home_search_shape"
-            android:drawableStart="@drawable/ic_search"
+            android:drawableStart="@drawable/search_icon1"
             android:drawableEnd="@drawable/offers_icon1"
-            android:drawablePadding="@dimen/_18sdp"
+            android:drawablePadding="@dimen/_16sdp"
             android:elevation="1dp"
             android:fontFamily="@font/roboto"
             android:hint="@string/home_search"
@@ -46,10 +44,11 @@
             android:id="@+id/text_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:fontFamily="@font/roboto_medium"
-            android:text="Top Stores in Egypt"
+            android:text="@string/top_stores_in_egypt"
             android:textColor="@color/textColor"
-            android:textSize="@dimen/font_md"
+            android:textSize="@dimen/_16sdp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/carousel_recycler_view"
             app:layout_constraintStart_toStartOf="@+id/carousel_recycler_view" />
@@ -60,17 +59,26 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_10sdp"
             android:fontFamily="@font/roboto_medium"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:text="@string/view_all_label"
-            android:textColor="@color/grey_dark"
+            android:textColor="@color/colorDarkGrey"
             android:textSize="@dimen/font_md"
             app:layout_constraintBottom_toTopOf="@+id/carousel_recycler_view"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/underline_view"
+            style="@style/UnderlineViewStyle"
+            app:layout_constraintTop_toBottomOf="@id/text_category_viewAll"
+            app:layout_constraintStart_toStartOf="@id/text_category_viewAll"
+            app:layout_constraintEnd_toEndOf="@id/text_category_viewAll"
+            app:layout_constraintWidth_percent="1" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/carousel_recycler_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_35sdp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
@@ -83,6 +91,7 @@
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="170dp"
+            android:layout_marginTop="@dimen/_15sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/carousel_recycler_view">
@@ -100,7 +109,7 @@
             <LinearLayout
                 android:id="@+id/SliderDots"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="25dp"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
@@ -119,7 +128,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
-                    android:text="90% OFF"
+                    android:text="@string/_90_off"
                     android:layout_marginTop="@dimen/_8sdp"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_25sdp"
@@ -141,9 +150,9 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imageslider"
-                    android:layout_width="@dimen/_25sdp"
-                    android:layout_height="@dimen/_25sdp"
-                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:src="@drawable/carrefour_image"
                     app:layout_constraintBottom_toBottomOf="@+id/ed_home_search"
                     app:layout_constraintStart_toEndOf="@+id/ed_home_search"
@@ -163,9 +172,9 @@
                     android:id="@+id/Buttomlider"
                     android:layout_width="@dimen/_100sdp"
                     android:layout_height="@dimen/_25sdp"
-                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
                     android:background="@drawable/button_background"
-                    android:text="GET DEAL NOW"
+                    android:text="@string/get_deal_now2"
                     android:textSize="@dimen/_10sdp"
                     app:layout_constraintBottom_toBottomOf="@+id/ed_home_search"
                     app:layout_constraintStart_toEndOf="@+id/ed_home_search"
@@ -176,27 +185,30 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/Coupons"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_medium"
-            android:text="Best Coupons in Egypt"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/font_md"
+            style="@style/CustomTextViewStyle"
             android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:text="@string/best_coupons_in_egypt"
             app:layout_constraintBottom_toTopOf="@+id/coupons_recycler_view"
             app:layout_constraintStart_toStartOf="@+id/coupons_recycler_view" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_Coupons_viewAll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/CustomTextViewStyle"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_10sdp"
-            android:fontFamily="@font/roboto_medium"
             android:text="@string/view_all_label"
-            android:textColor="@color/grey_dark"
+            android:textColor="@color/colorDarkGrey"
             android:textSize="@dimen/font_md"
             app:layout_constraintBottom_toTopOf="@+id/coupons_recycler_view"
             app:layout_constraintEnd_toEndOf="parent" />
+        <View
+            android:id="@+id/underline_view1"
+            style="@style/UnderlineViewStyle"
+            app:layout_constraintTop_toBottomOf="@id/text_Coupons_viewAll"
+            app:layout_constraintStart_toStartOf="@id/text_Coupons_viewAll"
+            app:layout_constraintEnd_toEndOf="@id/text_Coupons_viewAll"
+            app:layout_constraintWidth_percent="1" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/coupons_recycler_view"
@@ -216,21 +228,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
-            android:text="Log in"
+            android:text="@string/log_in"
             android:textColor="@color/textColor"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/imageView2"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        <View
+            android:id="@+id/underline_view10"
+            style="@style/UnderlineViewStyle"
+            android:background="@color/textColor"
+            app:layout_constraintTop_toBottomOf="@id/textView"
+            app:layout_constraintStart_toStartOf="@id/textView"
+            app:layout_constraintEnd_toEndOf="@id/textView"
+            app:layout_constraintWidth_percent="1" />
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
-            android:text="OR"
-            android:textColor="@color/grey_dark"
+            android:text="@string/or"
+            android:textColor="@color/colorDarkGrey"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textView"
@@ -242,13 +263,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
-            android:text="Register"
+            android:text="@string/register"
             android:textColor="@color/textColor"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/textView2"
             app:layout_constraintStart_toEndOf="@+id/textView2"
             app:layout_constraintTop_toTopOf="@+id/textView2" />
+        <View
+            android:id="@+id/underline_view11"
+            style="@style/UnderlineViewStyle"
+            android:layout_width="@dimen/_42sdp"
+            android:background="@color/textColor"
+            app:layout_constraintTop_toBottomOf="@id/textView3"
+            app:layout_constraintStart_toStartOf="@id/textView3"
+            app:layout_constraintEnd_toEndOf="@id/textView3"
+            app:layout_constraintWidth_percent="1" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageView2"
@@ -263,7 +293,7 @@
             android:id="@+id/imageView9"
             android:layout_width="@dimen/_25sdp"
             android:layout_height="@dimen/_25sdp"
-            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
             android:src="@drawable/bell_icon"
             app:layout_constraintBottom_toBottomOf="@+id/ed_home_search"
             app:layout_constraintStart_toEndOf="@+id/ed_home_search"
@@ -272,13 +302,10 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/CouponsForYou"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_medium"
-            android:text="Best Coupons For You"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/font_md"
+            style="@style/CustomTextViewStyle"
+            android:text="@string/best_coupons_for_you"
             android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_5sdp"
             app:layout_constraintBottom_toTopOf="@+id/couponsForYou_recycler_view"
             app:layout_constraintStart_toStartOf="@+id/couponsForYou_recycler_view" />
 
@@ -287,12 +314,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/view_all_label"
-            android:textColor="@color/grey_dark"
+            android:textColor="@color/colorDarkGrey"
             android:textSize="@dimen/font_md"
             app:layout_constraintBottom_toTopOf="@+id/couponsForYou_recycler_view"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/underline_view3"
+            style="@style/UnderlineViewStyle"
+            app:layout_constraintTop_toBottomOf="@id/text_CouponsForYou_viewAll"
+            app:layout_constraintStart_toStartOf="@id/text_CouponsForYou_viewAll"
+            app:layout_constraintEnd_toEndOf="@id/text_CouponsForYou_viewAll"
+            app:layout_constraintWidth_percent="1" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/couponsForYou_recycler_view"
@@ -311,6 +347,7 @@
             android:id="@+id/relativeLayoutMoreOffers"
             android:layout_width="match_parent"
             android:layout_height="170dp"
+            android:layout_marginTop="@dimen/_15sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/couponsForYou_recycler_view">
@@ -351,7 +388,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
-                    android:text="90% OFF"
+                    android:text="@string/_90_off"
                     android:layout_marginTop="@dimen/_8sdp"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_25sdp"
@@ -375,7 +412,7 @@
                     android:id="@+id/imageslider2"
                     android:layout_width="@dimen/_25sdp"
                     android:layout_height="@dimen/_25sdp"
-                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:src="@drawable/carrefour_image"
                     app:layout_constraintBottom_toBottomOf="@+id/vp_autoscrollMoreOffers"
                     app:layout_constraintStart_toEndOf="@+id/vp_autoscrollMoreOffers"
@@ -395,9 +432,9 @@
                     android:id="@+id/Buttomlider2"
                     android:layout_width="@dimen/_100sdp"
                     android:layout_height="@dimen/_25sdp"
-                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginStart="@dimen/_8sdp"
                     android:background="@drawable/button_background"
-                    android:text="GET DEAL NOW"
+                    android:text="@string/get_deal_now1"
                     android:textSize="@dimen/_10sdp"
                     app:layout_constraintBottom_toBottomOf="@+id/vp_autoscrollMoreOffers"
                     app:layout_constraintStart_toEndOf="@+id/vp_autoscrollMoreOffers"
@@ -408,12 +445,9 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/bestDeals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_medium"
-            android:text="Best Deals"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/font_md"
+            style="@style/CustomTextViewStyle"
+            android:text="@string/best_deals1"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/bestDeals_recycler_view"
             app:layout_constraintStart_toStartOf="@+id/bestDeals_recycler_view" />
@@ -422,13 +456,22 @@
             android:id="@+id/text_bestDeals_viewAll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/view_all_label"
-            android:textColor="@color/grey_dark"
+            android:textColor="@color/colorDarkGrey"
             android:textSize="@dimen/font_md"
             app:layout_constraintBottom_toTopOf="@+id/bestDeals_recycler_view"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/underline_view4"
+            style="@style/UnderlineViewStyle"
+            app:layout_constraintTop_toBottomOf="@id/text_bestDeals_viewAll"
+            app:layout_constraintStart_toStartOf="@id/text_bestDeals_viewAll"
+            app:layout_constraintEnd_toEndOf="@id/text_bestDeals_viewAll"
+            app:layout_constraintWidth_percent="1" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/bestDeals_recycler_view"
@@ -569,13 +612,10 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/featuredDeals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_medium"
-            android:text="Featured Deals"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/font_md"
+            style="@style/CustomTextViewStyle"
+            android:text="@string/featured_deals"
             android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_5sdp"
             app:layout_constraintBottom_toTopOf="@+id/featured_recycler_view"
             app:layout_constraintStart_toStartOf="@+id/featured_recycler_view" />
 
@@ -586,10 +626,19 @@
             android:layout_marginEnd="@dimen/_10sdp"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/view_all_label"
-            android:textColor="@color/grey_dark"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:textColor="@color/colorDarkGrey"
             android:textSize="@dimen/font_md"
             app:layout_constraintBottom_toTopOf="@+id/featured_recycler_view"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/underline_view6"
+            style="@style/UnderlineViewStyle"
+            app:layout_constraintTop_toBottomOf="@id/text_featured_viewAll"
+            app:layout_constraintStart_toStartOf="@id/text_featured_viewAll"
+            app:layout_constraintEnd_toEndOf="@id/text_featured_viewAll"
+            app:layout_constraintWidth_percent="1" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/featured_recycler_view"
@@ -607,13 +656,10 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/recent_category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_medium"
-            android:text="Recent Categories"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/font_md"
+            style="@style/CustomTextViewStyle"
+            android:text="@string/recent_categories"
             android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_5sdp"
             app:layout_constraintBottom_toTopOf="@+id/recent_recycler_view"
             app:layout_constraintStart_toStartOf="@+id/recent_recycler_view" />
 
@@ -624,10 +670,19 @@
             android:layout_marginEnd="@dimen/_10sdp"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/view_all_label"
-            android:textColor="@color/grey_dark"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:textColor="@color/colorDarkGrey"
             android:textSize="@dimen/font_md"
             app:layout_constraintBottom_toTopOf="@+id/recent_recycler_view"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/underline_view9"
+            style="@style/UnderlineViewStyle"
+            app:layout_constraintTop_toBottomOf="@id/text_recent_category_viewAll"
+            app:layout_constraintStart_toStartOf="@id/text_recent_category_viewAll"
+            app:layout_constraintEnd_toEndOf="@id/text_recent_category_viewAll"
+            app:layout_constraintWidth_percent="1" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recent_recycler_view"
@@ -645,6 +700,7 @@
             android:id="@+id/relativeLayoutMoreOffers2"
             android:layout_width="match_parent"
             android:layout_height="170dp"
+            android:layout_marginTop="@dimen/_15sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recent_recycler_view">
@@ -685,7 +741,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
-                    android:text="90% OFF"
+                    android:text="@string/_90_off"
                     android:layout_marginTop="@dimen/_8sdp"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_25sdp"
@@ -709,7 +765,7 @@
                     android:id="@+id/imageslider3"
                     android:layout_width="@dimen/_25sdp"
                     android:layout_height="@dimen/_25sdp"
-                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:src="@drawable/carrefour_image"
                     app:layout_constraintBottom_toBottomOf="@+id/vp_autoscrollMoreOffers2"
                     app:layout_constraintStart_toEndOf="@+id/vp_autoscrollMoreOffers2"
@@ -731,7 +787,7 @@
                     android:layout_height="@dimen/_25sdp"
                     android:layout_marginLeft="@dimen/_8sdp"
                     android:background="@drawable/button_background"
-                    android:text="GET DEAL NOW"
+                    android:text="@string/get_deal_now"
                     android:textSize="@dimen/_10sdp"
                     app:layout_constraintBottom_toBottomOf="@+id/vp_autoscrollMoreOffers2"
                     app:layout_constraintStart_toEndOf="@+id/vp_autoscrollMoreOffers2"
@@ -741,13 +797,10 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/todaysDeals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_medium"
-            android:text="Best Deals"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/font_md"
+            style="@style/CustomTextViewStyle"
+            android:text="@string/best_deals"
             android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_5sdp"
             app:layout_constraintBottom_toTopOf="@+id/todaysDeals_recycler_view"
             app:layout_constraintStart_toStartOf="@+id/todaysDeals_recycler_view" />
 
@@ -755,13 +808,22 @@
             android:id="@+id/text_todaysDeals_viewAll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/view_all_label"
-            android:textColor="@color/grey_dark"
+            android:textColor="@color/colorDarkGrey"
             android:textSize="@dimen/font_md"
             app:layout_constraintBottom_toTopOf="@+id/todaysDeals_recycler_view"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/underline_view7"
+            style="@style/UnderlineViewStyle"
+            app:layout_constraintTop_toBottomOf="@id/text_todaysDeals_viewAll"
+            app:layout_constraintStart_toStartOf="@id/text_todaysDeals_viewAll"
+            app:layout_constraintEnd_toEndOf="@id/text_todaysDeals_viewAll"
+            app:layout_constraintWidth_percent="1" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/todaysDeals_recycler_view"

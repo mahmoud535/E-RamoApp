@@ -3,7 +3,7 @@
      <dimen name="fab_margin">16dp</dimen>
     <dimen name="font_lg">@dimen/_14sdp</dimen>
     <dimen name="font_xlg">@dimen/_18sdp</dimen>
-    <dimen name="font_md">@dimen/_12sdp</dimen>
+    <dimen name="font_md">@dimen/_11sdp</dimen>
     <dimen name="font_sm">@dimen/_10sdp</dimen>
 
     <dimen name="progress_dialog_content_padding">10dp</dimen>

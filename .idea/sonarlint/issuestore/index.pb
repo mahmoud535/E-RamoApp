@@ -37,3 +37,13 @@ Papp/src/main/java/com/example/e_ramoapp/presentation/ui/activity/MainActivity.k
 happ/src/main/java/com/example/e_ramoapp/presentation/ui/fragment/dashboard/fragment/DashboardFragment.kt,a\c\acb47e934407ec005ffa2521d5a69a6881581dec
 ‚
 Rapp/src/main/java/com/example/e_ramoapp/presentation/ui/adapter/FeaturedAdapter.kt,7\a\7a39e18adb9b88403e719bad71173cf1b471e6fd
+„
+Tapp/src/main/java/com/example/e_ramoapp/presentation/ui/adapter/TodayDealsAdapter.kt,5\0\50218cb5d0b749742a975b19980a5240f3010a51
+š
+japp/src/main/java/com/example/e_ramoapp/presentation/ui/fragment/dashboard/viewmodel/DashboardViewModel.kt,f\d\fdf5dc4373c943e9ad8df2137fb677bebfb1498e
+r
+Bapp/src/main/java/com/example/e_ramoapp/data/FakeDataRepository.kt,d\3\d3ba053522748c27c07ce567027aa51c4d551461
+˜
+happ/src/main/java/com/example/e_ramoapp/presentation/ui/fragment/notifications/NotificationsViewModel.kt,5\a\5af95dd4677e346967b1e7e05e4499e72f028f91
+¡
+qapp/src/main/java/com/example/e_ramoapp/presentation/ui/fragment/dashboard/viewmodel/DashboardViewModelFactory.kt,e\d\ed6e2731667a6de10d50de58a0caf770eeac2c30

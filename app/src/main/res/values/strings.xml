@@ -164,5 +164,19 @@
     <string name="float_button">Float Buttom</string>
     <string name="setting">Setting</string>
     <string name="coupones">Coupones</string>
+    <string name="best_deals">Best Deals</string>
+    <string name="get_deal_now">GET DEAL NOW</string>
+    <string name="_90_off">90% OFF</string>
+    <string name="recent_categories">Recent Categories</string>
+    <string name="featured_deals">Featured Deals</string>
+    <string name="best_deals1">Best Deals</string>
+    <string name="get_deal_now1">GET DEAL NOW</string>
+    <string name="best_coupons_for_you">Best Coupons For You</string>
+    <string name="register">Register</string>
+    <string name="or">OR</string>
+    <string name="log_in">Log in</string>
+    <string name="best_coupons_in_egypt">Best Coupons in Egypt</string>
+    <string name="get_deal_now2">GET DEAL NOW</string>
+    <string name="top_stores_in_egypt">Top Stores in Egypt</string>
 
 </resources>

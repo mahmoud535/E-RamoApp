@@ -62,7 +62,8 @@
             android:layout_gravity="center"
             android:layout_marginBottom="@dimen/_5sdp"
             android:layout_marginStart="@dimen/_57sdp"
-            android:textSize="@dimen/_10sdp"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold"
             android:layout_marginTop="@dimen/_27sdp"
             android:text="GET DEAL NOW" />
 

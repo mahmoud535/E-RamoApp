@@ -13,48 +13,28 @@ import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.example.e_ramoapp.R
+import com.example.e_ramoapp.data.FakeDataRepository
 import com.example.e_ramoapp.databinding.FragmentDashboardBinding
 import com.example.e_ramoapp.presentation.ui.adapter.*
 import com.example.e_ramoapp.presentation.ui.fragment.dashboard.viewmodel.DashboardViewModel
+import com.example.e_ramoapp.presentation.ui.fragment.dashboard.viewmodel.DashboardViewModelFactory
 import kotlin.math.abs
 
 class DashboardFragment : Fragment() {
 
     private lateinit var binding: FragmentDashboardBinding
     private lateinit var dashboardViewModel: DashboardViewModel
+    private val repository: FakeDataRepository by lazy { FakeDataRepository()}
+    private val dashboardViewModelFactory: DashboardViewModelFactory by lazy { DashboardViewModelFactory(repository) }
     private lateinit var handler: Handler
-    private val imageAdapter: ImageAdapter by lazy {
-        ImageAdapter(dashboardViewModel.getFakeData())
-    }
-
-    private val recentCategoriesAdapter: ImageAdapter by lazy {
-        ImageAdapter(dashboardViewModel.getFakeRecentCategoriesData())
-    }
-
-    private val couponsAdapter: CouponsAdapter by lazy {
-        CouponsAdapter(dashboardViewModel.getFakeCouponsData())
-    }
-
-    private val couponsForYouAdapter: CouponsAdapter by lazy {
-        CouponsAdapter(dashboardViewModel.getFakeCouponsForYouData())
-    }
-
-    private val dealsAdapter: DealsAdapter by lazy {
-        DealsAdapter(dashboardViewModel.getFakeBestDealsData())
-    }
-
-    private val todayDealsAdapter: TodayDealsAdapter by lazy {
-        TodayDealsAdapter(dashboardViewModel.getFakeTodayDealsData())
-    }
-
-    private val featuredAdapter: FeaturedAdapter by lazy {
-        FeaturedAdapter(dashboardViewModel.getFakeFeaturedData())
-    }
-
-    private val newYearOfferAdapter: CouponsAdapter by lazy {
-        CouponsAdapter(dashboardViewModel.getFakeBestDealsData())
-    }
-
+    private val imageAdapter: ImageAdapter by lazy { ImageAdapter(dashboardViewModel.getFakeData()) }
+    private val recentCategoriesAdapter: ImageAdapter by lazy { ImageAdapter(dashboardViewModel.getFakeRecentCategoriesData()) }
+    private val couponsAdapter: CouponsAdapter by lazy { CouponsAdapter(dashboardViewModel.getFakeCouponsData()) }
+    private val couponsForYouAdapter: CouponsAdapter by lazy { CouponsAdapter(dashboardViewModel.getFakeCouponsForYouData()) }
+    private val dealsAdapter: DealsAdapter by lazy { DealsAdapter(dashboardViewModel.getFakeBestDealsData()) }
+    private val todayDealsAdapter: TodayDealsAdapter by lazy { TodayDealsAdapter(dashboardViewModel.getFakeTodayDealsData()) }
+    private val featuredAdapter: FeaturedAdapter by lazy { FeaturedAdapter(dashboardViewModel.getFakeFeaturedData()) }
+    private val newYearOfferAdapter: CouponsAdapter by lazy { CouponsAdapter(dashboardViewModel.getFakeBestDealsData()) }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -64,13 +44,14 @@ class DashboardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        dashboardViewModel = ViewModelProvider(this, dashboardViewModelFactory).get(DashboardViewModel::class.java)
+        actions()
+    }
 
-        dashboardViewModel = ViewModelProvider(this).get(DashboardViewModel::class.java)
-
+    private fun actions(){
         setupRecyclerViews()
         setupViewPager()
     }
-
     private fun setupRecyclerViews() {
         setupCarouselRecyclerView()
         setupRecentRecyclerView()
@@ -159,7 +140,7 @@ class DashboardFragment : Fragment() {
 
     private fun ViewPager2.setUpTransformer() {
         val transformer = CompositePageTransformer().apply {
-            addTransformer(MarginPageTransformer(40))
+            addTransformer(MarginPageTransformer(30))
             addTransformer { page, position ->
                 val r = 1 - abs(position)
                 page.scaleY = 0.85f + r * 0.14f
@@ -198,6 +179,6 @@ class DashboardFragment : Fragment() {
     }
     override fun onResume() {
         super.onResume()
-        handler.postDelayed(runnable, 4000)
+        handler.postDelayed(runnable, 3000)
     }
 }

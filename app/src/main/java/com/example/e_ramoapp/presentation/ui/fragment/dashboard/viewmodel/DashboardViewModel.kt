@@ -2,66 +2,28 @@ package com.example.e_ramoapp.presentation.ui.fragment.dashboard.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.example.e_ramoapp.R
+import com.example.e_ramoapp.data.FakeDataRepository
 import com.example.e_ramoapp.data.ImageItem
 
-class DashboardViewModel : ViewModel() {
+class DashboardViewModel(private val repository: FakeDataRepository) : ViewModel() {
 
-    fun getFakeData() = arrayListOf(
-        ImageItem(R.drawable.category_image1),
-        ImageItem(R.drawable.category_image2),
-        ImageItem(R.drawable.category_image3)
-    )
+    fun getFakeData() = repository.getFakeData()
 
-    fun getFakeCouponsData() = arrayListOf(
-        ImageItem(R.drawable.img_cp1),
-        ImageItem(R.drawable.img_cp2),
-        ImageItem(R.drawable.img_cp3)
-    )
+    fun getFakeCouponsData() = repository.getFakeCouponsData()
 
-    fun getFakeCouponsForYouData() = arrayListOf(
-        ImageItem(R.drawable.img_foryou),
-        ImageItem(R.drawable.img_foryou1),
-        ImageItem(R.drawable.img_foryou2)
-    )
+    fun getFakeCouponsForYouData() = repository.getFakeCouponsForYouData()
 
-    fun getFakeBestDealsData() = arrayListOf(
-        ImageItem(R.drawable.deal_img1),
-        ImageItem(R.drawable.deal_img2),
-        ImageItem(R.drawable.deal_img3)
-    )
+    fun getFakeBestDealsData() = repository.getFakeBestDealsData()
 
-    fun getFakeTodayDealsData() = arrayListOf(
-        ImageItem(R.drawable.deal_img1),
-        ImageItem(R.drawable.todat_img1)
-    )
+    fun getFakeTodayDealsData() = repository.getFakeTodayDealsData()
 
-    fun getFakeFeaturedData() = arrayListOf(
-        ImageItem(R.drawable.feature_deals_img),
-        ImageItem(R.drawable.feature_deals_img1)
-    )
+    fun getFakeFeaturedData() = repository.getFakeFeaturedData()
 
-    fun getFakeRecentCategoriesData() = arrayListOf(
-        ImageItem(R.drawable.recent_categories1),
-        ImageItem(R.drawable.recent_categories2),
-        ImageItem(R.drawable.recent_categories3),
-        ImageItem(R.drawable.recent_categories4)
-    )
+    fun getFakeRecentCategoriesData() = repository.getFakeRecentCategoriesData()
 
-    fun getImageList() = arrayListOf(
-        R.drawable.switch_image,
-        R.drawable.img1,
-        R.drawable.img2
-    )
+    fun getImageList() = repository.getImageList()
 
-    fun getMoreOffersImageList() = arrayListOf(
-        R.drawable.img2,
-        R.drawable.img1,
-        R.drawable.switch_image
-    )
+    fun getMoreOffersImageList() = repository.getMoreOffersImageList()
 
-    fun getMoreOffers2ImageList() = arrayListOf(
-        R.drawable.switch_image,
-        R.drawable.img1,
-        R.drawable.img2
-    )
+    fun getMoreOffers2ImageList() = repository.getMoreOffers2ImageList()
 }
