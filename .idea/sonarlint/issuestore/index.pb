@@ -47,3 +47,9 @@ Bapp/src/main/java/com/example/e_ramoapp/data/FakeDataRepository.kt,d\3\d3ba053
 happ/src/main/java/com/example/e_ramoapp/presentation/ui/fragment/notifications/NotificationsViewModel.kt,5\a\5af95dd4677e346967b1e7e05e4499e72f028f91
 ¡
 qapp/src/main/java/com/example/e_ramoapp/presentation/ui/fragment/dashboard/viewmodel/DashboardViewModelFactory.kt,e\d\ed6e2731667a6de10d50de58a0caf770eeac2c30
+l
+<app/src/main/java/com/example/e_ramoapp/domain/repository.kt,7\b\7b22d4cdc4cb841b395bbf55cd5b4c477e996eab
+€
+Papp/src/main/java/com/example/e_ramoapp/domain/repository/IFakeDataRepository.kt,d\1\d1fff90b019e75727a2dede3c61447761fe617a1
+o
+?app/src/main/java/com/example/e_ramoapp/data/model/ImageItem.kt,a\2\a25bd808b43c0386c6e5337c953c869e8b0a1684

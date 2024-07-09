@@ -2,7 +2,7 @@ package com.example.e_ramoapp.presentation.ui.fragment.dashboard.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.e_ramoapp.data.FakeDataRepository
+import com.example.e_ramoapp.data.repository.FakeDataRepository
 
 class DashboardViewModelFactory(private val repository: FakeDataRepository) : ViewModelProvider.Factory {
 

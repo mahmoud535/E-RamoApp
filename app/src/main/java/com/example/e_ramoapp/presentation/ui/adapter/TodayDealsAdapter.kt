@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.e_ramoapp.R
-import com.example.e_ramoapp.data.ImageItem
+import com.example.e_ramoapp.data.model.ImageItem
 
 class TodayDealsAdapter (private val imageList: List<ImageItem>) : RecyclerView.Adapter<TodayDealsAdapter.ImageDealsViewHolder>() {
 

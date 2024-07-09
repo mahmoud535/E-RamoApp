@@ -12,8 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.example.e_ramoapp.R
-import com.example.e_ramoapp.data.FakeDataRepository
+import com.example.e_ramoapp.data.repository.FakeDataRepository
 import com.example.e_ramoapp.databinding.FragmentDashboardBinding
 import com.example.e_ramoapp.presentation.ui.adapter.*
 import com.example.e_ramoapp.presentation.ui.fragment.dashboard.viewmodel.DashboardViewModel
@@ -24,7 +23,7 @@ class DashboardFragment : Fragment() {
 
     private lateinit var binding: FragmentDashboardBinding
     private lateinit var dashboardViewModel: DashboardViewModel
-    private val repository: FakeDataRepository by lazy { FakeDataRepository()}
+    private val repository: FakeDataRepository by lazy { FakeDataRepository() }
     private val dashboardViewModelFactory: DashboardViewModelFactory by lazy { DashboardViewModelFactory(repository) }
     private lateinit var handler: Handler
     private val imageAdapter: ImageAdapter by lazy { ImageAdapter(dashboardViewModel.getFakeData()) }
